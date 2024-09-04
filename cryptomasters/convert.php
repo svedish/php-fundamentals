@@ -16,7 +16,12 @@
 $amount = $_GET["amount"];
 $crypto = $_GET["crypto"];
 
-echo "The amount of $amount in $crypto equals to 400 dollars";
+require_once("classes.php");
+
+$converter = new CryptoConverter($crypto);
+$result = $converter->convert($amount);
+
+echo "The amount of $amount in $crypto equals to $result dollars";
 
 ?>
 

@@ -1,4 +1,6 @@
 
+// This code does not work in Firefox as the observe method for PerformanceObserver in Firefox doesn't support the combination of the entryTypes and buffered options as it does in Chrome.
+
 const obs = new PerformanceObserver(list => {
     const entries = list.getEntries();
     console.log(entries);
